@@ -3,40 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería de Imágenes desde GitHub</title>
+    <title>Imagen Aleatoria</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .image-gallery {
-            margin-top: 20px;
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
+            align-items: center;
+            height: 100vh;
+            background-color: transparent; /* Fondo transparente */
         }
-        .image-gallery img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            margin: 10px;
-            border: 2px solid #ccc;
-            border-radius: 8px;
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Ajusta la imagen dentro del contenedor */
         }
     </style>
 </head>
 <body>
 
-    <h1>Galería de Imágenes desde GitHub</h1>
-    
-    <div class="image-gallery">
-        <!-- Sustituye las URLs por las de tu repositorio -->
-        <img src="https://Fernandocruztovar332.github.io/imagenes/imagen1.png" alt="Imagen 1">
-        <img src="https://Fernandocruztovar332.github.io/imagenes/imagen2.png" alt="Imagen 2">
-        <img src="https://Fernandocruztovar332.github.io/imagenes/imagen3.png" alt="Imagen 3">
-        <img src="https://Fernandocruztovar332.github.io/imagenes/imagen4.png" alt="Imagen 4">
-    </div>
+    <script>
+        // Lista de URLs de imágenes en tu repositorio
+        const imagenes = [
+            'https://Fernandocruztovar332.github.io/imagenes/imagen1.png',
+            'https://<tu-usuario>.github.io/<nombre-repositorio>/imagenes/imagen2.jpg',
+            'https://Fernandocruztovar332.github.io/imagenes/imagen2.png'
+
+        ];
+
+        // Seleccionar una imagen aleatoria
+        const indiceAleatorio = Math.floor(Math.random() * imagenes.length);
+        const imagenAleatoria = imagenes[indiceAleatorio];
+
+        // Crear el elemento de imagen y añadirlo al body
+        const imgElement = document.createElement('img');
+        imgElement.src = imagenAleatoria;
+        document.body.appendChild(imgElement);
+    </script>
 
 </body>
 </html>
